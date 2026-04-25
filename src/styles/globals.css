@@ -640,3 +640,101 @@ img { max-width: 100%; display: block; }
   .stats-grid, .features-grid { grid-template-columns: 1fr; }
   .banner-hero-content h2 { font-size: 24px; }
 }
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 80mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-only-wrapper,
+  .print-only-wrapper * {
+    visibility: visible;
+  }
+
+  .print-only-wrapper {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .invoice-print-sheet {
+    width: 80mm;
+    max-width: 80mm;
+    min-width: 80mm;
+    padding: 6mm 4mm;
+    margin: 0;
+    box-shadow: none !important;
+    border: 0 !important;
+    color: #000;
+    background: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .invoice-print-header {
+    display: block;
+    border-bottom: 1px dashed #999;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .invoice-print-header h1 {
+    font-size: 18px;
+    margin: 0 0 4px;
+    text-align: center;
+  }
+
+  .invoice-print-header h2 {
+    font-size: 14px;
+    margin: 8px 0 4px;
+    text-align: center;
+  }
+
+  .invoice-print-header p,
+  .invoice-customer-box p,
+  .invoice-print-summary p,
+  .invoice-footer-note p {
+    margin: 3px 0;
+    font-size: 11px;
+  }
+
+  .invoice-print-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .invoice-print-table th,
+  .invoice-print-table td {
+    border: 1px solid #000;
+    padding: 4px;
+    font-size: 10px;
+    text-align: right;
+    word-break: break-word;
+  }
+
+  .invoice-footer-note {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 11px;
+    border-top: 1px dashed #999;
+    padding-top: 8px;
+  }
+}
